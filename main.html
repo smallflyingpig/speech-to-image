@@ -3,11 +3,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <title>
-Speech2Face: Learning the Face Behind a Voice
+speech-to-image translation without text
 </title>
-<link href="./Speech2Face_ Learning the Face Behind a Voice_files/style.css" rel="stylesheet" type="text/css">
+<link href="./main/style.css" rel="stylesheet" type="text/css">
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script type="text/javascript" async="" src="./Speech2Face_ Learning the Face Behind a Voice_files/analytics.js"></script><script async="" src="./Speech2Face_ Learning the Face Behind a Voice_files/js"></script>
+<script type="text/javascript" async="" src="./main/analytics.js"></script><script async="" src="./main/js"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -19,40 +19,45 @@ Speech2Face: Learning the Face Behind a Voice
 <body>
 <div class="container">
   <p>&nbsp;</p>
+  <!--
   <p><span class="venue">IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2019</span></p>
-  <p><span class="title">Speech2Face: Learning the Face Behind a Voice</span></p>
+  -->
+  <p><span class="title">speech-to-image translation without text</span></p>
   <br>
   <table border="0" align="center" class="authors">
     <tbody><tr align="center" valign="bottom">
-	  <td><a href="http://thohkaistackr.wixsite.com/page">Tae-Hyun Oh</a><sup>* ✝</sup></td>
-	  <td><a href="http://people.csail.mit.edu/talidekel/">Tali Dekel</a><sup>*</sup></td>
-	  <td><a href="https://people.csail.mit.edu/changil/">Changil Kim</a><sup>* ✝</sup></td>
+    <!--
       <td><a href="https://ai.google/research/people/InbarMosseri">Inbar Mosseri</a></td>
       <td><a href="https://billf.mit.edu/">William T. Freeman</a><sup>✝</sup></td>
       <td><a href="http://people.csail.mit.edu/mrub/">Michael Rubinstein<sup> </sup></a></td>
       <td><a href="http://people.csail.mit.edu/wojciech">Wojciech Matusik</a><sup>✝</sup></td>
+    -->
+    <td><a href="http://thohkaistackr.wixsite.com/page">Jiguo Li</a><sup></sup></td>
+    <td><a href="http://www.idm.pku.edu.cn/Teamcon/index/id/456/aid/2831">Siwei Ma</a><sup></sup></td>
+    <td><a href="http://www.jdl.ac.cn/htm-gaowen/">Wen Gao</a><sup></sup></td>
+	  
     </tr>
   </tbody></table>
   <br>
   <table border="0" align="center" class="affiliations">
     <tbody><tr align="center" valign="middle">
-      <td width="120" align="right" style="padding:0 0px 0 0px;"><img src="./Speech2Face_ Learning the Face Behind a Voice_files/mit_csail_logo.png" width="105" height="72" alt=""></td>
+      <td width="120" align="right" style="padding:0 0px 0 0px;"><img src="./main/mit_csail_logo.png" width="105" height="72" alt=""></td>
 	<td width="97" align="left" style="padding:0 0px 0 0px;"><sup>✝</sup> <a href="https://www.csail.mit.edu/">MIT CSAIL</a></td>
     </tr>
   </tbody></table>
   <br>
   <table width="200" border="0" align="center">
     <tbody><tr>
-      <td class="caption"><img src="./Speech2Face_ Learning the Face Behind a Voice_files/teaser_side.jpg" width="270" alt=""></td>
+      <td class="caption"><img src="./main/teaser_side.jpg" width="270" alt=""></td>
       <td class="caption"><table width="75%" border="0" align="right" cellpadding="0">
         <tbody>
           <tr>
-            <td width="16%"><img src="./Speech2Face_ Learning the Face Behind a Voice_files/0024Daniel_Craig_L1Ltxf1NeL8_0000007.jpg" width="100"></td>
-            <td width="16%"><img src="./Speech2Face_ Learning the Face Behind a Voice_files/1044Phyllis_Diller_qoc0k5YwbRI_0000019.jpg" width="100"></td>
-            <td width="16%"><img src="./Speech2Face_ Learning the Face Behind a Voice_files/0014Kodi_Smit-McPhee_NUZdfoqhB8o_0000015.jpg" width="100"></td>
-            <td width="16%"><img src="./Speech2Face_ Learning the Face Behind a Voice_files/1114Maria_Sharapova_rWaBVelzaFk_0000022.jpg" width="100"></td>
-            <td width="16%"><img src="./Speech2Face_ Learning the Face Behind a Voice_files/0022Andre_Braugher_p5AJtU5gclc_0000004.jpg" width="100"></td>
-            <td width="20%"><img src="./Speech2Face_ Learning the Face Behind a Voice_files/1111Parineeti_Chopra_2yUgv3B_YcI_0000002.jpg" width="100"></td>
+            <td width="16%"><img src="./main/0024Daniel_Craig_L1Ltxf1NeL8_0000007.jpg" width="100"></td>
+            <td width="16%"><img src="./main/1044Phyllis_Diller_qoc0k5YwbRI_0000019.jpg" width="100"></td>
+            <td width="16%"><img src="./main/0014Kodi_Smit-McPhee_NUZdfoqhB8o_0000015.jpg" width="100"></td>
+            <td width="16%"><img src="./main/1114Maria_Sharapova_rWaBVelzaFk_0000022.jpg" width="100"></td>
+            <td width="16%"><img src="./main/0022Andre_Braugher_p5AJtU5gclc_0000004.jpg" width="100"></td>
+            <td width="20%"><img src="./main/1111Parineeti_Chopra_2yUgv3B_YcI_0000002.jpg" width="100"></td>
           </tr>
           <tr>
             <td colspan="6" align="center">True face (only for reference)</td>
@@ -81,12 +86,12 @@ Speech2Face: Learning the Face Behind a Voice
             <td colspan="6" align="center">Input waveforms</td>
           </tr>
           <tr>
-            <td><img src="./Speech2Face_ Learning the Face Behind a Voice_files/0024Daniel_Craig_L1Ltxf1NeL8_0000007(1).jpg" width="100"></td>
-            <td><img src="./Speech2Face_ Learning the Face Behind a Voice_files/1044Phyllis_Diller_qoc0k5YwbRI_0000019(1).jpg" width="100"></td>
-            <td><img src="./Speech2Face_ Learning the Face Behind a Voice_files/0014Kodi_Smit-McPhee_NUZdfoqhB8o_0000015(1).jpg" width="100"></td>
-            <td><img src="./Speech2Face_ Learning the Face Behind a Voice_files/1114Maria_Sharapova_rWaBVelzaFk_0000022(1).jpg" width="100"></td>
-            <td><img src="./Speech2Face_ Learning the Face Behind a Voice_files/0022Andre_Braugher_p5AJtU5gclc_0000004(1).jpg" width="100"></td>
-            <td><img src="./Speech2Face_ Learning the Face Behind a Voice_files/1111Parineeti_Chopra_2yUgv3B_YcI_0000002(1).jpg" width="100"></td>
+            <td><img src="./main/0024Daniel_Craig_L1Ltxf1NeL8_0000007(1).jpg" width="100"></td>
+            <td><img src="./main/1044Phyllis_Diller_qoc0k5YwbRI_0000019(1).jpg" width="100"></td>
+            <td><img src="./main/0014Kodi_Smit-McPhee_NUZdfoqhB8o_0000015(1).jpg" width="100"></td>
+            <td><img src="./main/1114Maria_Sharapova_rWaBVelzaFk_0000022(1).jpg" width="100"></td>
+            <td><img src="./main/0022Andre_Braugher_p5AJtU5gclc_0000004(1).jpg" width="100"></td>
+            <td><img src="./main/1111Parineeti_Chopra_2yUgv3B_YcI_0000002(1).jpg" width="100"></td>
           </tr>
           <tr>
             <td colspan="6" align="center">Face reconstructed from speech</td>
@@ -112,7 +117,7 @@ Our reconstructions, obtained directly from audio, reveal the  correlations betw
   <table border="0">
     <tbody>
       <tr>
-        <td height="195"><a href="https://arxiv.org/abs/1905.09773"><img src="./Speech2Face_ Learning the Face Behind a Voice_files/webthumbnail.jpg" alt="" width="175" height="211"></a></td>
+        <td height="195"><a href="https://arxiv.org/abs/1905.09773"><img src="./main/webthumbnail.jpg" alt="" width="175" height="211"></a></td>
         <td>&nbsp;</td>
 	<td>&nbsp;</td>
         <td>"Speech2Face: Learning the Face Behind a Voice",<br>
@@ -127,7 +132,7 @@ Our reconstructions, obtained directly from audio, reveal the  correlations betw
   <table width="283" height="136" border="0">
     <tbody>
       <tr>
-        <td width="165"><a href="https://speech2face.github.io/supplemental/index.html"><img src="./Speech2Face_ Learning the Face Behind a Voice_files/supp_fig.jpg" alt="" width="207"></a></td>
+        <td width="165"><a href="https://speech2face.github.io/supplemental/index.html"><img src="./main/supp_fig.jpg" alt="" width="207"></a></td>
         <td width="6">&nbsp;</td>
         <td width="56"><p>[<a href="https://speech2face.github.io/supplemental/index.html">Link</a>]</p></td>
       </tr>
