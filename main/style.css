@@ -64,6 +64,10 @@ table.affiliations td {
 	font-weight: bold;
 }
 
+.aligncenter {
+	text-align: center;
+}
+
 .bibtex {
 	font-family: "Google Sans, Courier, monospace;
 	white-space: pre;
