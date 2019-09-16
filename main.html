@@ -22,7 +22,7 @@ speech-to-image translation without text
   <!--
   <p><span class="venue">IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2019</span></p>
   -->
-  <p><span class="title">speech-to-image translation without text</span></p>
+  <p><span class="title">Speech-to-Image Translation without Text</span></p>
   <br>
   <table border="0" align="center" class="authors">
     <tbody><tr align="center" valign="bottom">
@@ -84,7 +84,7 @@ speech-to-image translation without text
     </tr>
   </tbody></table>
   <br>
-  <table width="40%" birder="0" align="center">
+  <table width="40%" border="0" align="center">
     <tbody>
       <tr>
         <td class="caption">
@@ -128,7 +128,7 @@ speech-to-image translation without text
   </p>
   <p><span class="section">Framework</span> </p>
 
-  <table width=80% birder="0" align="center">
+  <table width=80% border="0" align="center">
       <tbody>
         <tr>
           <td class="aligncenter">
@@ -151,7 +151,7 @@ speech-to-image translation without text
 
   <p><span class='section'>Results on synthesized data</span></p>
   
-  <table width=100% birder="0" align="center">
+  <table width=100% border="0" align="center">
       <tbody>
         <tr>
           <td class="aligncenter">
@@ -198,7 +198,7 @@ speech-to-image translation without text
              <audio src="./audio/image_03095_0.flower_row6.ogg" controls="controls" style="width: 150px;"></audio>
             </td>
             <td class="aligncenter">
-              <img src="./image/image_quality_row7.jpg" width=100% alt="">
+              <img src="./image/image_quality_row6.jpg" width=100% alt="">
             </td>
         </tr>
         <tr>
@@ -245,7 +245,7 @@ speech-to-image translation without text
   </table>
 
   <p><span class='section'>Results on read data</span></p>
-  <table width=100% birder="0" align="center">
+  <table width=100% border="0" align="center">
       <tbody>
           <tr>
               <td class="aligncenter">
@@ -313,6 +313,72 @@ speech-to-image translation without text
       </tbody>
   </table>
 
+  <p><span class="section">Feature interpolation</span></p>
+  <table width=100% border="0" align="center">
+    <tbody>
+      <tr height="16px">
+        <td class="aligncenter" width=50%>
+          <audio src="./audio/audio_inter_row1_1.ogg" controls="controls" width="150px">the small bird has a brown head with yellow belly.</audio>
+        </td>
+        <td class="aligncenter" width=50%>
+            <audio src="./audio/audio_inter_row1_2.ogg" controls="controls" width="150px">the small bird has a blue head with white belly.</audio>
+          </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="aligncenter" width=100%>
+          <img src="image/audio_interpolation_row1.jpg" width=100%>
+        </td>
+      </tr>
+      <tr height="16px">
+          <td class="aligncenter" width=50%>
+            <audio src="./audio/audio_inter_row2_1.ogg" controls="controls" width="150px"></audio>
+          </td>
+          <td class="aligncenter" width=50%>
+              <audio src="./audio/audio_inter_row2_2.ogg" controls="controls" width="150px"></audio>
+            </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="aligncenter" width=100%>
+            <img src="image/audio_interpolation_row2.jpg" width=100%>
+          </td>
+        </tr>
+        <tr height="16px">
+            <td class="aligncenter" width=50%>
+              <audio src="./audio/audio_inter_row3_1.ogg" controls="controls" width="150px"></audio>
+            </td>
+            <td class="aligncenter" width=50%>
+                <audio src="./audio/audio_inter_row3_2.ogg" controls="controls" width="150px"></audio>
+              </td>
+          </tr>
+          <tr>
+            <td colspan="2" class="aligncenter" width=100%>
+              <img src="image/audio_interpolation_row3.jpg" width=100%>
+            </td>
+          </tr>
+          <tr height="16px">
+              <td class="aligncenter" width=50%>
+                <audio src="./audio/audio_inter_row4_1.ogg" controls="controls" width="150px"></audio>
+              </td>
+              <td class="aligncenter" width=50%>
+                  <audio src="./audio/audio_inter_row4_2.ogg" controls="controls" width="150px"></audio>
+                </td>
+            </tr>
+            <tr>
+              <td colspan="2" class="aligncenter" width=100%>
+                <img src="image/audio_interpolation_row4.jpg" width=100%>
+              </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="caption" align="center">
+                  <p>
+                    Feature interpolation results on CUB-200 and Oxford-102 dataset.
+                  <br>
+                </p></td>
+            </tr>
+    </tbody>
+  </table>
+  <p class="section">Supplementary material</p>
+  You can find the data in supplemental material <a href="./supplymentary.html">here</a>.
   <p class="section">Paper</p>
   <table border="0">
     <tbody>
@@ -320,8 +386,8 @@ speech-to-image translation without text
         <td height="195"><a href="www.baidu.com"><img src="./image/webthumbnail.jpg" alt="" width="175" height="211"></a></td>
         <td>&nbsp;</td>
 	<td>&nbsp;</td>
-        <td>"speech-to-image translation without text",<br>
-            Jiguo, Li, Siwei Ma, Wen Gao<br>
+        <td>"Speech-to-Image Translation without Text",<br>
+            Jiguo, Li, Xinfeng Zhang, Chuanmin Jia, Jizheng Xu, Li Zhang, Yue Wang, Siwei Ma, Wen Gao<br>
 	Arxiv<br>
         <p><a href="www.baidu.com">[Arxiv]</a></p></td>
       </tr>
@@ -330,7 +396,34 @@ speech-to-image translation without text
 &nbsp;<br>
 
   <p><span class='section'>Data and Code</span></p>
-  Coming soon.
+  <p><span class="subsection">Data </span></p>
+  <p>We use 3 datasets in our paper, the data can be downloaded form the following table.</p>
+  <table border="1" class="aligncenter">
+    <tr>
+      <td>dataset</td><td>image data</td><td>speech caption data</td><td>split file</td>
+    </tr>
+    <tr>
+      <td>CUB-200</td>
+      <td><a href="http://www.vision.caltech.edu/visipedia/CUB-200-2011.html">CUB-200</a></a></td>
+      <td>syhthesized by <a href="https://ai.baidu.com/tech/speech/tts">Baidu TTS</a> with person 0</td>
+      <td><a href="./data/CUB-200/CUB-200.zip" download>train/val split</a></td>
+    </tr>
+    <tr>
+      <td>Oxford-102</td>
+      <td><a href="http://www.robots.ox.ac.uk/~vgg/data/flowers/">Oxford-102</a></td>
+      <td>syhthesized by <a href="https://ai.baidu.com/tech/speech/tts">Baidu TTS</a> with person 0</td>
+      <td><a href="./data/Oxford-102/Oxford-102.zip" download>train/test split</a></td>
+    </tr>
+    <tr>
+      <td>Places-205</td>
+      <td><a href="http://places.csail.mit.edu/">Places-205</a></td>
+      <td><a href="https://groups.csail.mit.edu/sls/downloads/placesaudio/index.cgi">Places Audio Captions Dataset</a></td>
+      <td><a href="./data/Places-205/Places-205.zip" download>train/test split</a></td>
+    </tr>
+    <caption>The data used in our paper.</caption> 
+  </table>
+  <p><span class="subsection">Code</span></p>
+  <p>The code will come soon.</p>
 
 
   <p class="section">Acknowledgment</p>
@@ -339,7 +432,7 @@ speech-to-image translation without text
       <tr>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-        <td>Insert acknowledgement here.
+        <td>The authors would like to thank <a href="http://www.cs.cityu.edu.hk/~shiqwang/">Shiqi Wang</a> for helpful discussion.
 <br>
 		&nbsp;<br>
 	</td>

@@ -64,6 +64,11 @@ table.affiliations td {
 	font-weight: bold;
 }
 
+.subsection{
+	font-size: 120%;
+	font-weight: bold;
+}
+
 .aligncenter {
 	text-align: center;
 }
