@@ -33,9 +33,13 @@ speech-to-image translation without text
       <td><a href="http://people.csail.mit.edu/wojciech">Wojciech Matusik</a><sup>✝</sup></td>
     -->
     <td><a href="https://github.com/smallflyingpig">Jiguo Li</a><sup></sup></td>
+    <td><a href="https://scholar.google.com/citations?user=KQB-cKAAAAAJ&hl=zh-CN">Xinfeng Zhang</a><sup></sup></td>
+    <td><a href="http://www.jiachuanmin.site/">Chuanmin Jia</a><sup></sup></td>
+    <td><a href="https://scholar.google.com/citations?user=x4iWZ7wAAAAJ&hl=en">Jizheng Xu</a><sup></sup></td>
+    <td><a href="https://scholar.google.com/citations?user=8G5-2OMAAAAJ&hl=en">Li Zhang</a><sup></sup></td>
+    <td><a href="">Yue Wang</a><sup></sup></td>
     <td><a href="http://www.idm.pku.edu.cn/Teamcon/index/id/456/aid/2831">Siwei Ma</a><sup>✝</sup></td>
     <td><a href="http://www.jdl.ac.cn/htm-gaowen/">Wen Gao</a><sup></sup></td>
-	  
     </tr>
   </tbody></table>
   <br>
@@ -44,24 +48,33 @@ speech-to-image translation without text
 
   <td align="right" style="padding:0 0px 0 0px;">
     <a href="http://www.ict.ac.cn/">
-      <img src="./main/cnplogo.jpg"  height="36" alt="">
+      <img src="./image/cnplogo.jpg"  height="36" alt="">
     </a>
     </td>
-    <td align="left" style="padding:0 0px 0 0px;">
+    <td align="left" style="padding:0 20px 0 0px;">
       <a href="http://www.ict.ac.cn/">ICT,CAS</a>
     </td>
   <td align="right" style="padding:0 0px 0 0px;"> 
     <a href="https://www.pku.edu.cn/">
-      <img src="./main/400px-Peking_University_seal.svg.png" height="36" alt="">
+      <img src="./image/Peking_University.jpg" height="36" alt="">
     </a>
     </td>
-    <td align="center" style="padding:0 0px 0 0px;">
+    <td align="center" style="padding:0 20px 0 0px;">
       <sup>✝</sup><a href="https://www.pku.edu.cn/">PKU</a>
     </td>
+
+    <td align="right" style="padding:0 0px 0 0px;"> 
+        <a href="http://www.ucas.ac.cn/">
+          <img src="./image/UCAS_logo.jpg" height="36" alt="">
+        </a>
+        </td>
+        <td align="center" style="padding:0 20px 0 0px;">
+          <a href="http://www.ucas.ac.cn/">UCAS</a>
+        </td>
   
   <td align="right" style="padding:0 0px 0 0px;">
     <a href="https://bytedance.com/zh">
-      <img src="./main/ByteDance_Logo.png"  height="36" alt="">
+      <img src="./image/ByteDance_Logo.jpg"  height="36" alt="">
     </a>
     </td>
     <td align="left" style="padding:0 0px 0 0px;">
@@ -75,7 +88,7 @@ speech-to-image translation without text
     <tbody>
       <tr>
         <td class="caption">
-          <img src="./main/audio_to_image.png" width="100%" alt="">
+          <img src="./image/audio_to_image.jpg" width="100%" alt="">
         </td>
       </tr>
       <tr>
@@ -90,8 +103,28 @@ speech-to-image translation without text
   </table>
 
   <p><span class="section">Abstract</span> </p>
-  <p>insert the abstract here<br>
-    &nbsp;<br>
+  <p>
+      Speech-to-image translation without text is an interesting
+      and useful topic due to the potential applications in humancomputer
+      interaction, art creation, computer-aided design. etc.
+      Not to mention that many languages have no writing form.
+      However, as far as we know, it has not been well-studied
+      how to translate the speech signals into images directly and
+      how well they can be translated. In this paper, we attempt to
+      translate the speech signals into the image signals without the
+      transcription stage by leveraging the advance of teacher-student
+      learning and generative adversarial models. Specifically, a speech
+      encoder is designed to represent the input speech signals as
+      an embedding feature, and it is trained using teacher-student
+      learning to obtain better generalization ability on new classes.
+      Subsequently, a stacked adversarial generative network is used
+      to synthesized high-quality images conditioned on the embedding
+      feature encoded by the speech encoder. Experimental results on
+      both synthesized and real data show that our proposed method is
+      efficient to translate the raw speech signals into images without
+      the middle text representation. Ablation study gives more insights
+      about our method.
+    <br>&nbsp;<br>
   </p>
   <p><span class="section">Framework</span> </p>
 
@@ -99,13 +132,16 @@ speech-to-image translation without text
       <tbody>
         <tr>
           <td class="aligncenter">
-            <img src="./main/proposal_model.png" width=100% alt="">
+            <img src="./image/proposal_model.jpg" width=100% alt="">
           </td>
         </tr>
         <tr>
             <td colspan="1" class="caption">
               <p>
-                insert caption here.
+                Our framework for speech-to-image translation, which is composed with a speech encoder and a stacked generator.
+                The speech encoder contains a multi-layer CNN and an RNN to encode the input time-frequency spectrogram 
+                into an embedding feature with 1024 dimensions. The speech encoder is trained using teacher-student learning with the pretrained image encoder.
+                The generator with 3 branches is used to synthesize image at a resolution 256x256 from the embedding feature.
               <br>
             </p></td>
         </tr>
@@ -114,17 +150,94 @@ speech-to-image translation without text
 
 
   <p><span class='section'>Results on synthesized data</span></p>
-  <table width=80% birder="0" align="center">
+  
+  <table width=100% birder="0" align="center">
       <tbody>
         <tr>
           <td class="aligncenter">
-            <img src="./main/image_quality.png" width=100% alt="">
+           <audio src="./audio/Golden_Winged_Warbler_0044_794836_5.bird_row1.ogg" controls="controls" style="width: 150px;"></audio>
+          </td>
+          <td class="aligncenter">
+            <img src="./image/image_quality_row1.jpg" width=100% alt="">
           </td>
         </tr>
         <tr>
-            <td colspan="1" class="caption">
+            <td class="aligncenter">
+             <audio src="./audio/Purple_Finch_0001_27571_0.bird_row2.ogg" controls="controls" style="width: 150px;"></audio>
+            </td>
+            <td class="aligncenter">
+              <img src="./image/image_quality_row2.jpg" width=100% alt="">
+            </td>
+        </tr>
+        <tr>
+          <td class="aligncenter">
+           <audio src="./audio/Scott_Oriole_0063_795812_7.bird_row3.ogg" controls="controls" style="width: 150px;"></audio>
+          </td>
+          <td class="aligncenter">
+            <img src="./image/image_quality_row3.jpg" width=100% alt="">
+          </td>
+        </tr>
+        <tr>
+          <td class="aligncenter">
+           <audio src="./audio/Sayornis_0002_98596_0.bird_row4.ogg" controls="controls" style="width: 150px;"></audio>
+          </td>
+          <td class="aligncenter">
+            <img src="./image/image_quality_row4.jpg" width=100% alt="">
+          </td>
+        </tr>
+        <tr>
+            <td class="aligncenter">
+             <audio src="./audio/Pomarine_Jaeger_0062_61351_8.bird_row5.ogg" controls="controls" style="width: 150px;"></audio>
+            </td>
+            <td class="aligncenter">
+              <img src="./image/image_quality_row5.jpg" width=100% alt="">
+            </td>
+        </tr>
+        <tr>
+            <td class="aligncenter">
+             <audio src="./audio/image_03095_0.flower_row6.ogg" controls="controls" style="width: 150px;"></audio>
+            </td>
+            <td class="aligncenter">
+              <img src="./image/image_quality_row7.jpg" width=100% alt="">
+            </td>
+        </tr>
+        <tr>
+            <td class="aligncenter">
+             <audio src="./audio/image_04259_4.flower_row7.ogg" controls="controls" style="width: 150px;"></audio>
+            </td>
+            <td class="aligncenter">
+              <img src="./image/image_quality_row7.jpg" width=100% alt="">
+            </td>
+        </tr>
+        <tr>
+            <td class="aligncenter">
+             <audio src="./audio/image_03135_3.flower_row8.ogg" controls="controls" style="width: 150px;"></audio>
+            </td>
+            <td class="aligncenter">
+              <img src="./image/image_quality_row8.jpg" width=100% alt="">
+            </td>
+        </tr>
+        <tr>
+            <td class="aligncenter">
+             <audio src="./audio/image_03354_5.flower_row9.ogg" controls="controls" style="width: 150px;"></audio>
+            </td>
+            <td class="aligncenter">
+              <img src="./image/image_quality_row9.jpg" width=100% alt="">
+            </td>
+        </tr>
+        <tr>
+            <td class="aligncenter">
+             <audio src="./audio/image_03180_0.flower_row10.ogg" controls="controls" style="width: 150px;"></audio>
+            </td>
+            <td class="aligncenter">
+              <img src="./image/image_quality_row10.jpg" width=100% alt="">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="caption" align="center">
               <p>
-                insert caption here.
+                Results on <a href="http://www.vision.caltech.edu/visipedia/CUB-200-2011.html">CUB-200</a> and 
+                <a href="http://www.robots.ox.ac.uk/~vgg/data/flowers/">Oxford-102</a> dataset. Left: the input speech description. Right: the synthesized images conditioned on the left speech description and different noises.  The speech description are synthesized via <a href="https://ai.baidu.com/tech/speech/tts">Baidu TTS</a>.
               <br>
             </p></td>
         </tr>
@@ -132,17 +245,68 @@ speech-to-image translation without text
   </table>
 
   <p><span class='section'>Results on read data</span></p>
-  <table width=80% birder="0" align="center">
+  <table width=100% birder="0" align="center">
       <tbody>
+          <tr>
+              <td class="aligncenter">
+               <audio src="./audio/utterance_276326.place1.ogg" controls="controls" style="width: 150px;"></audio>
+              </td>
+              <td class="aligncenter">
+                <img src="./image/gsun_0aa8f1d5b286c7b397e080345d7d1e4b_256_sentence0_0_place1.jpg" height="128px" alt="">
+              </td>
+              <td class="aligncenter">
+                <audio src="./audio/utterance_281895.place2.ogg" controls="controls" style="width: 150px;"></audio>
+              </td>
+              <td class="aligncenter">
+                <img src="./image/gsun_4ad3177a6bb1a66f4c29889440d7d912_256_sentence0_0_place2.jpg" height="128px" alt="">
+              </td>
+          </tr>
+          <tr>
+              <td class="aligncenter">
+               <audio src="./audio/utterance_284994.place3.ogg" controls="controls" style="width: 150px;"></audio>
+              </td>
+              <td class="aligncenter">
+                <img src="./image/gsun_0f0d6139110c1b6e8ee8427af043cac4_256_sentence0_0_place3.jpg" height="128px" alt="">
+              </td>
+              <td class="aligncenter">
+                <audio src="./audio/utterance_388460.place4.ogg" controls="controls" style="width: 150px;"></audio>
+              </td>
+              <td class="aligncenter">
+                <img src="./image/gsun_7b053262cb331e7fcc60c2c16f7ae222_256_sentence0_0_place4.jpg" height="128px" alt="">
+              </td>
+          </tr>
+          <tr>
+              <td class="aligncenter">
+               <audio src="./audio/utterance_18908.place5.ogg" controls="controls" style="width: 150px;"></audio>
+              </td>
+              <td class="aligncenter">
+                <img src="./image/gsun_2dbc415b379a636bb33644b112b96849_256_sentence0_0_place5.jpg" height="128px" alt="">
+              </td>
+              <td class="aligncenter">
+                <audio src="./audio/utterance_311414.place6.ogg" controls="controls" style="width: 150px;"></audio>
+              </td>
+              <td class="aligncenter">
+                <img src="./image/gsun_6c9203a8ef8d2f34b09e21e22df053e5_256_sentence0_0_place6.jpg" height="128px" alt="">
+              </td>
+          </tr>
+          <tr>
+              <td class="aligncenter">
+               <audio src="./audio/utterance_276277.place7.ogg" controls="controls" style="width: 150px;"></audio>
+              </td>
+              <td class="aligncenter">
+                <img src="./image/gsun_3a51413a94077a4f462c4ddb78688eb0_256_sentence0_0_place7.jpg" height="128px" alt="">
+              </td>
+              <td class="aligncenter">
+                <audio src="./audio/utterance_276064.place8.ogg" controls="controls" style="width: 150px;"></audio>
+              </td>
+              <td class="aligncenter">
+                <img src="./image/gsun_773783bbeca9b1ed5bf3b5e5150f477b_256_sentence0_0_place8.jpg" height="128px" alt="">
+              </td>
+          </tr>
         <tr>
-          <td class="aligncenter">
-            <img src="./main/image_quality_places.png" width=50% alt="">
-          </td>
-        </tr>
-        <tr>
-            <td colspan="1" class="caption">
+            <td colspan="4" class="caption" align="center">
               <p>
-                insert caption here.
+                results on <a href="http://places.csail.mit.edu/">Place-205</a> dataset with <a href="https://groups.csail.mit.edu/sls/downloads/placesaudio/index.cgi">real speech descriptions</a>.
               <br>
             </p></td>
         </tr>
@@ -153,7 +317,7 @@ speech-to-image translation without text
   <table border="0">
     <tbody>
       <tr>
-        <td height="195"><a href="www.baidu.com"><img src="./main/webthumbnail.jpg" alt="" width="175" height="211"></a></td>
+        <td height="195"><a href="www.baidu.com"><img src="./image/webthumbnail.jpg" alt="" width="175" height="211"></a></td>
         <td>&nbsp;</td>
 	<td>&nbsp;</td>
         <td>"speech-to-image translation without text",<br>
